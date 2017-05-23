@@ -65,10 +65,13 @@ h1, h2, h3 {
 
 // Homepage Styles
 .home-callout {
-    margin-top: -20px;
-    padding-top: 50px;
-    padding-bottom: 100px;
-    color: white;
+  margin-top: -20px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  color: white;
+}
+.home-signup-links {
+  margin-top: 30px;
 }
 
 // Hide Devise alert notice class for "Signed out successfully"
