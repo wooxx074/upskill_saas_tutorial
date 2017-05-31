@@ -49,12 +49,13 @@ $(document).on('turbolinks:load', function(){
         exp_year: expYear
         
       }, stripeResponseHandler);
-    });
-  };
+    }
+    return false;
+  });
   // Stripe will return a card token
   
   function stripeResponseHandler(status, response) {
-    var token = response.id
+    var token = response.id;
   
     // Inject card token as hidden field into form
     theForm.append( $('<input type="hidden" name="user[stripe_card_token]">').val(token) );
@@ -64,5 +65,5 @@ $(document).on('turbolinks:load', function(){
     
   }
   
-  return false
+  
 });
