@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  
   belongs_to :plan
   
   
@@ -16,7 +17,7 @@ class User < ApplicationRecord
       customer = Stripe::Customer.create(description: email, plan: plan_id, card: stripe_card_token)
       self.stripe_customer_token = customer.id
       save!
-      user.errors.full_messages
+      flash[:notice] = user.errors.full_messages
     end
   end
   
