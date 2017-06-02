@@ -91,3 +91,11 @@ h1, h2, h3 {
 .alert-notice {
   // display: none;
 }
+
+#error_explanation ul li {
+  color: red;
+}
+
+#error_explanation h2 {
+  font-size: 15px;
+}
